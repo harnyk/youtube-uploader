@@ -1,0 +1,30 @@
+[project]
+name = "youtube-uploader"
+version = "0.1.0"
+description = "CLI to upload and manage YouTube videos and playlists"
+readme = "README.md"
+authors = [
+    { name = "Mark" }
+]
+requires-python = ">=3.12"
+license = "MIT"
+keywords = ["youtube", "upload", "cli"]
+dependencies = [
+    "google-api-python-client>=2.202.0",
+    "google-auth-httplib2>=0.4.4",
+    "google-auth-oauthlib>=1.5.0",
+    "typer>=0.29.2",
+]
+
+[project.scripts]
+ytu = "youtube_uploader.cli:main"
+youtube-uploader = "youtube_uploader.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.16,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
